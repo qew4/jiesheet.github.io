@@ -9,7 +9,7 @@
     <style>
         .excel {
             width: 800px;
-            height: 700px;
+            height: 500px;
             user-select: none;
             border: 0px solid black;
             display: inline-block;
@@ -18,20 +18,21 @@
 
         #idbububu2 {
             width: 800px;
-            height: 700px;
+            height: 500px;
             position: relative;
-            top: -200px;
             user-select: none;
             border: 0px solid black;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
-    <div style="display: inline-block;">左<br>侧<br>占<br>位<br>文<br>字<br>，<br>预<br>览<br>网<br>页<br>嵌<br>入<br>f<br>d<br>s<br>a <br> f<br>d<br>s<br>a <br> f<br>d<br>s<br>a <br> f<br>d<br>s<br>a <br> f<br>d<br>s<br>a <br> f</div>
-    <div class="zhanweiclass excel"></div>
-
-    右侧占位位子<div style="padding:10px">
-        <input type="file" id="fileInput">
+    <div style="display: inline-block;">
+        <div class="zhanweiclass excel"></div>
+        <div id="idbububu2" style="margin-top: 15px;"></div>
+        <div style="padding:10px;">
+            <input type="file" id="fileInput">
+        </div>
     </div>
 </body>
 <script>
@@ -39,11 +40,10 @@
         el: '.excel',
         data: {}
     });
-    // var app2 = JieSheet({
-    // 	el:'#idbububu2',
-    // 	data:{
-    // 	}
-    // });
+    var app2 = JieSheet({
+        el: '#idbububu2',
+        data: {}
+    });
     document.getElementById('fileInput').addEventListener('change', function(event) {
         handleFileUpload(event.target.files[0]);
     });
